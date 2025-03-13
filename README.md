@@ -15,3 +15,6 @@ This is a simple Node.js and Express-based to-do app backend that stores tasks i
 # Things I Learned
 
 - tba added
+
+## License
+This project is licensed under the MIT License.
