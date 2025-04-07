@@ -1,10 +1,14 @@
 const express = require('express')
 const app = express()
+const PORT = 3000
 
 
 app.get('/', (req, res) => {
-    res.send('hello')
-    d
+    res.sendFile(__dirname + '/index.html')
+    
 })
 
-app.listen(3000)
+app.listen(PORT, () => {
+    console.log(`This server is running on ${PORT} go catch it`)
+
+})
