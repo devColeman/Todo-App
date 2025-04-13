@@ -8,6 +8,11 @@ app.get('/', (req, res) => {
     
 })
 
+app.post('/addTodo', (req,res) => {
+    console.log('post worked')
+    res.redirect('/')
+})
+
 app.listen(PORT, () => {
     console.log(`This server is running on ${PORT} go catch it`)
 
