@@ -14,6 +14,6 @@ app.post('/addTodo', (req,res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`This server is running on ${PORT} go catch it`)
+    console.log(`This server is running on port ${PORT} go catch it`)
 
 })
