@@ -16,5 +16,13 @@ This is a simple Node.js and Express-based to-do app backend that stores tasks i
 
 - tba added
 
+## 🚀 Clone Me
+
+```bash
+git clone https://github.com/your-username/your-todo-app.git
+cd your-todo-app
+npm install express
+node index.js
+
 ## License
 This project is licensed under the MIT License.
