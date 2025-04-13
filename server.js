@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
     
 })
-
+// cgcbn
 app.post('/addTodo', (req,res) => {
     console.log('post worked')
     res.redirect('/')
