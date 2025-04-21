@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App📝</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Todo App</h1>
+    <form action="/addTodo" method="POST">
+        <!-- this action adds a route for the backend -->
+         <input type="text" placeholder="Thing To Do" name="todoItem">
+        <input type="submit">
+    </form>
+    <ul>
+        <% for(let i=0; i < items.length; i++) {%>
+            <li class="item">
+                
+                    <span><%= items[i].thing %></span>   
+                
+            </li>
+        <% } %>
+    </ul>
+</body>
+<script src="/public/main.js"></script>
+</html>
