@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 /
 app.post('/addTodo', (req,res) => {
-    console.log('post worked')
+    console.log(req.body)
     res.redirect('/')
 })
 
