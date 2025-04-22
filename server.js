@@ -4,6 +4,9 @@ const MongoClient = require('mongodb').MongoClient
 const PORT = 3000
 require('dotenv').config()
 
+const path = require('path');
+
+
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true }))
 app.use(express.json())
@@ -35,6 +38,17 @@ app.post('/addTodo', (req,res) => {
     })
     .catch(error => console.error(error))
     
+})
+
+app.delete('/deleteItem', (request, response) => {
+    db.collection('todos').deleteOne({thing: request.body.itemFromJS})
+    .then(result => {
+        console.log('Todo Deleted')
+        console.log(`${request.body.itemFromJS}`)
+        response.json('Todo Deleted')
+    })
+    .catch(error => console.error(error))
+
 })
 
 app.listen(PORT, () => {
