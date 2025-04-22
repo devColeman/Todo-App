@@ -17,8 +17,8 @@
         <% for(let i=0; i < items.length; i++) {%>
             <li class="item">
                 
-                    <span><%= items[i].thing %></span>   
-                
+                    <span class="done" id="items"><%= items[i].thing %></span>   
+                    <span class="remove">❌</span>
             </li>
         <% } %>
     </ul>

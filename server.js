@@ -27,7 +27,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
 app.get('/',async (req, res) => {
     const todoItems = await db.collection('todos').find().toArray()
-    res.render('index.ejs', { items: todoItems})
+    res.render('index.ejs', { items: todoItems, completed: false})
 })
 /
 app.post('/addTodo', (req,res) => {
@@ -40,7 +40,7 @@ app.post('/addTodo', (req,res) => {
     
 })
 
-app.delete('/deleteItem', (request, response) => {
+app.delete('/deleteItems', (request, response) => {
     db.collection('todos').deleteOne({thing: request.body.itemFromJS})
     .then(result => {
         console.log('Todo Deleted')
@@ -48,6 +48,15 @@ app.delete('/deleteItem', (request, response) => {
         response.json('Todo Deleted')
     })
     .catch(error => console.error(error))
+
+})
+
+app.put('/markDone', (req, res) => {
+    db.collection('todos').updateOne({thing: req.body.itemFromJS},{
+        $set: {
+            completed: true
+          }
+    })
 
 })
 
