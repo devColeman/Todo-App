@@ -1,8 +1,25 @@
-h1 {
+body {
+    background-color: black;
+   
+}
+
+h1, form, li {
     display: flex;
     justify-content: center;
+    color: red;
+    ;
+}
+
+span:hover {
+    background-color: aqua;
+    border-radius: 5rem;
 }
 
 .completed {
     text-decoration: line-through;
 }
+
+/* 
+we need to style the todo app so it look alright, then add a gif of the app working, 
+after the gif is done start powerpoint for mvc
+ */
