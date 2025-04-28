@@ -27,7 +27,8 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
 app.get('/',async (req, res) => {
     const todoItems = await db.collection('todos').find().toArray()
-    res.render('index.ejs', { items: todoItems, completed: false})
+    const test = await db.collection('todos').find()
+    res.render('index.ejs', { items: todoItems, completed: test})
 })
 /
 app.post('/addTodo', (req,res) => {
@@ -56,10 +57,20 @@ app.put('/markDone', (req, res) => {
         $set: {
             completed: true
           }
+              
     })
-
+    res.json('Marked Complete')
 })
 
+app.put('/unmarkDone', (req, res) => {
+    db.collection('todos').updateOne({thing: req.body.itemFromJS},{
+        $set: {
+            completed: false
+          }
+              
+    })
+    res.json('Marked not Done')
+})
 app.listen(PORT, () => {
     console.log(`This server is running on port ${PORT} go catch it`)
 

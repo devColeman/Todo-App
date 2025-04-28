@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo App📝</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h1>Todo App</h1>
@@ -16,10 +16,17 @@
     <ul>
         <% for(let i=0; i < items.length; i++) {%>
             <li class="item">
-                
-                    <span class="done" id="items"><%= items[i].thing %></span>   
+                <% if(items[i].completed === true) {%>
+                    <span class='completed'><%= items[i].thing %></span>
                     <span class="remove">❌</span>
-            </li>
+                <% }else{ %>
+                    <span class="notDone"><%= items[i].thing %></span>
+                    <span class="remove">❌</span>
+                <% } %>    
+                
+                    <!-- <span class="done" id="items"><%= items[i].thing %><% items[i].completed %></span>   
+                    
+            </li> -->
         <% } %>
     </ul>
 </body>
